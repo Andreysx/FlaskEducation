@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Six Task</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Возраст</th>
+        </tr>
+        {% for name in names %}
+        <tr>
+            <td>
+                {{ name["name"] }}
+            </td>
+            <td>
+                {{ name["Lastname"] }}
+            </td>
+            <td>
+                {{ name["age"] }}
+            </td>
+
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
