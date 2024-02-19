@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+        {{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+<div>
+    <a href="{{ url_for('hello') }}">Нажми меня</a>
+</div>
+<div>
+    <img src="static/image/Skills.jpg" alt="Картинка">
+</div>
+{% endblock %}

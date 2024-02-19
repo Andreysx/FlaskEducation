@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+        {{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+        <p>Hello </p>
+        <div>
+                <form method=post enctype=multipart/form-data>
+                <input type="file" name="file">
+                <input type="submit" value="Загрузить">
+                </form>
+        </div>
+{% endblock %}
