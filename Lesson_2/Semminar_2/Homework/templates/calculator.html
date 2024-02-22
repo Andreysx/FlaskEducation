@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+</head>
+<body>
+    <form method="post">
+        <input type="number" name="num_1" placeholder="Первое число" required>
+        <input type="number" name="num_2" placeholder="Второе число" required>
+        <fieldset>
+            <legend>Выберите операцию:</legend>
+            <div>
+              <input type="radio" id="sum" name="operation" value="+">
+              <label for="sum"> + Сложить</label>
+            </div>
+
+            <div>
+              <input type="radio" id="sub" name="operation" value="-">
+              <label for="sub">- Вычесть</label>
+            </div>
+
+            <div>
+              <input type="radio" id="mul" name="operation" value="*">
+              <label for="mul">* Умножить</label>
+            </div>
+
+            <div>
+              <input type="radio" id="div" name="operation" value="/">
+              <label for="div">/ Разделить</label>
+            </div>
+        </fieldset>
+        <input type="submit" value="Посчитать">
+    </form>
+</body>
+</html>
