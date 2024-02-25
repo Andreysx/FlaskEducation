@@ -24,7 +24,7 @@ def hello():
         print(result)
         return "Файл загружен"
 
-    return render_template('index.html', **context)
+    return render_template('indextask1.html', **context)
 
 
 

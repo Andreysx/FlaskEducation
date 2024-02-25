@@ -34,7 +34,7 @@
 #
 #
 # Рендеринг HTML файла
-# Попробуем вывести файл index.html, используя локальный сервер Flask.
+# Попробуем вывести файл indextask1.html, используя локальный сервер Flask.
 # <!doctype html>
 # <html lang="ru">
 # <head>
@@ -58,18 +58,18 @@
 #
 # from flask import render_template
 # Добавим функцию рендеринга в функцию представления и укажем ей на файл
-# index.html. Общий код будет выглядеть так:
+# indextask1.html. Общий код будет выглядеть так:
 # from flask import Flask
 # from flask import render_template
 # app = Flask(__name__)
 # @app.route('/index/')
 # def html_index():
-#     return render_template('index.html')
+#     return render_template('indextask1.html')
 # После перехода по локальному адресу получим сообщение об ошибке:
 # TemplateNotFound
-# jinja2.exceptions.TemplateNotFound: index.html
+# jinja2.exceptions.TemplateNotFound: indextask1.html
 #
-# Функция render_template() ищет файл index.html в папке templates. Необходимо
+# Функция render_template() ищет файл indextask1.html в папке templates. Необходимо
 # перенести его в нужную папку. Другие html-файлы также необходимо складывать в
 # указанную папку.
 # После перезагрузки сервер выводит страницу в браузер.
@@ -93,7 +93,7 @@
 # скобки — аналог функции print() в Python.
 # Изменим строку вывода в функции, добавив аргумент name со значением
 # «Харитон»:
-# return render_template('index.html', name='Харитон')
+# return render_template('indextask1.html', name='Харитон')
 #
 # В шаблоне заменим имя владельца на вывод переменной из шаблона.
 # <h1 class="text-monospace">Привет, меня зовут {{ name }}</h1>
@@ -111,7 +111,7 @@
 #     'title': 'Личный блог',
 #     'name': 'Харитон',
 #     }
-#     return render_template('index.html', **context)
+#     return render_template('indextask1.html', **context)
 # Теперь в шаблон проброшены переменные name и title и можно заменить
 # содержимое шаблона внутри тега <title> на переменную.
 # <title>{{ title }}</title>
