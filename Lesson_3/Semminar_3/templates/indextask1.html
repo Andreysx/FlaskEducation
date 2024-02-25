@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+{% if students %}
+<table class="table table-hover table-bordered table-striped">
+    {% for student in students %}
+    <tr>
+        <td>{{ student.id }}</td>
+        <td>{{ student.first_name }}</td>
+        <td>{{ student.last_name }}</td>
+        <td>{{ student.age }}</td>
+        {% if student.gender %}
+        <td>Мужской</td>
+        {% else %}
+        <td>Женский</td>
+        {% endif %}
+        <td>{{ student.group }}</td>
+        <td>{{ student.faculty.name }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<h1>Студентов нету =(</h1>
+{% endif %}
+{% endblock %}
