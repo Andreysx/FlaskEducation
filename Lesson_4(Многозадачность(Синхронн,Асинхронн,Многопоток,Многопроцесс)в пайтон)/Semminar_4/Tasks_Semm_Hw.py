@@ -79,10 +79,11 @@ async def task4(urls):
         tasks.append(task)
     await asyncio.gather(*tasks)
 
+# Задание №4(task5)
 # � Создать программу, которая будет производить подсчет
 # количества слов в каждом файле в указанной директории и
 # выводить результаты в консоль.
-# � Используйте процессы.
+# � Используйте потоки.
 
 def count_words(file: Path, start_time):
     with open(file, encoding='utf-8') as f:
@@ -101,6 +102,47 @@ def task5(path: Path):
 
     for thread in threads:
         thread.join()
+
+#
+# Задание №5(task6) Homework
+# � Создать программу, которая будет производить подсчет
+# количества слов в каждом файле в указанной директории и
+# выводить результаты в консоль.
+# � Используйте процессы.
+
+def task6(path: Path):
+    start_time = time.time()
+    files = [file for file in path.iterdir() if file.is_file()]
+    processes = []
+    for file in files:
+        process = multiprocessing.Process(target=count_words, args=[file, start_time])
+        processes.append(process)
+        process.start()
+
+    for process in processes:
+        process.join()
+
+
+# Задание №6(task7) Homework
+# � Создать программу, которая будет производить подсчет
+# количества слов в каждом файле в указанной директории и
+# выводить результаты в консоль.
+# � Используйте асинхронный подход.
+
+async def async_count_words(file: Path, start_time):
+    with open(file, encoding='utf-8') as f:
+        text = f.read()
+        print(f"Inside file {file.name} {len(text.split())} words - {time.time() - start_time: .2f}")
+
+
+async def task7(path: Path):
+    start_time = time.time()
+    file_paths = [file_path for file_path in path.iterdir() if file_path.is_file()]
+    tasks = [asyncio.create_task(async_count_words(path, start_time)) for path in file_paths]
+    await asyncio.gather(*tasks)
+
+
+
 
 
 
@@ -127,7 +169,9 @@ def main():
 
     # task5
     path = Path(Path.cwd() / 'upload')
-    task5(path)
+    # task5(path) # Потоки
+    # task6(path) # Homework, Процессы
+    # asyncio.run(task7(path)) # Homework Асиинхронный подход
 
 
 
