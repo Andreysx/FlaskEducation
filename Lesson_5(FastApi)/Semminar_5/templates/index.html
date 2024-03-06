@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users Table</title>
+</head>
+<body>
+<h1>Таблица пользователей</h1>
+    <div>
+        <table class="table table-hover table-bordered table-striped">
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <button><span>Добавить пользователя</span></button>
+    </div>
+
+</body>
+</html>
