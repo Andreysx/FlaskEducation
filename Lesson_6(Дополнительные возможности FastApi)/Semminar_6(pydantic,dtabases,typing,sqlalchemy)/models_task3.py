@@ -1,10 +1,11 @@
 from pydantic import BaseModel, Field
+import random
 
 
 class TaskIn(BaseModel):
-    name: str = Field(min_length=2)
-    description: str = Field(default="Не определено")
-    status: str = Field(default="Не выполнена", max_length=13)
+    title: str = Field(title='title', min_length=2)
+    description: str = Field(title='description', max_length=50)
+    done: bool = Field(title='done', default=False)
 
 
 class Task(TaskIn):
